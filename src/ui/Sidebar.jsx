@@ -11,13 +11,21 @@ const StyledSidebar = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+
+  @media (min-width: 320px) and (max-width: 699px) {
+    display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+  }
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, onOpen }) => {
   return (
-    <StyledSidebar>
+    <StyledSidebar isOpen={isOpen}>
       <Logo />
-      <MainNav />
+      <MainNav onOpen={onOpen} />
     </StyledSidebar>
   );
 };

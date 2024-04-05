@@ -16,6 +16,16 @@ const CommonRow = styled.div`
   column-gap: 2.4rem;
   align-items: center;
   transition: none;
+
+  @media (min-width: 700px) and (max-width: 1439px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1.4rem;
+  }
+
+  @media (min-width: 320px) and (max-width: 699px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1.4rem;
+  }
 `;
 
 const StyledHeader = styled(CommonRow)`

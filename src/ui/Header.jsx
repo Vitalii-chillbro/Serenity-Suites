@@ -13,9 +13,41 @@ const StyledHeader = styled.header`
   justify-content: flex-end;
 `;
 
-const Header = () => {
+const BurgerIcon = styled.span`
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 44px;
+
+  @media (min-width: 320px) and (max-width: 699px) {
+    display: block;
+  }
+`;
+
+const CloseIcon = styled.span`
+  display: none;
+  position: absolute;
+  top: 3px;
+  right: 22px;
+  font-size: 40px;
+
+  @media (min-width: 320px) and (max-width: 699px) {
+    display: block;
+  }
+`;
+
+const Header = ({ isOpen, onBurgerClick }) => {
   return (
     <StyledHeader>
+      {isOpen ? (
+        <CloseIcon onClick={onBurgerClick}>&#1061;</CloseIcon>
+      ) : (
+        <BurgerIcon isOpen={isOpen} onClick={onBurgerClick}>
+          &#9776;
+        </BurgerIcon>
+      )}
+
       <UserAvatar />
       <HeaderMenu />
     </StyledHeader>

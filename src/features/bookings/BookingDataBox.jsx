@@ -58,6 +58,7 @@ const Section = styled.section`
 const Guest = styled.div`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1.2rem;
   margin-bottom: 1.6rem;
   color: var(--color-grey-500);

@@ -26,6 +26,14 @@ const ChartBox = styled.div`
   & .recharts-pie-label-text {
     font-weight: 600;
   }
+
+  @media (min-width: 700px) and (max-width: 1439px) {
+    padding: 2.4rem 1.2rem;
+  }
+
+  @media (min-width: 320px) and (max-width: 699px) {
+    padding: 2.4rem 1.2rem;
+  }
 `;
 
 const startDataLight = [
@@ -147,7 +155,11 @@ const DurationChart = ({ confirmedStays }) => {
   return (
     <ChartBox>
       <Heading as="h2">Stay duration summary</Heading>
-      <ResponsiveContainer width="100%" height={240}>
+      <ResponsiveContainer
+        width="100%"
+        height={240}
+        style={{ padding: "17px" }}
+      >
         <PieChart>
           <Pie
             data={data}

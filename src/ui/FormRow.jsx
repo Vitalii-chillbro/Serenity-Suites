@@ -25,6 +25,15 @@ const StyledFormRow = styled.div`
     justify-content: flex-end;
     gap: 1.2rem;
   }
+
+  @media (min-width: 700px) and (max-width: 1439px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 320px) and (max-width: 699px) {
+    /* grid-template-columns: 10rem 1fr 1fr; */
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Label = styled.label`
